@@ -56,12 +56,12 @@
     color: var(--bs-dark);
   }
   body.dark_theme {
-    background: var(--bs-dark);
+    background: var(--bs-shades-dark);
     color: var(--bs-light);
   }
   .dark_theme .navbar,
   .dark_theme .footer{
-    background: var(--bs-shades-dark);
+    background: var(--bs-dark);
   }
   .dark_theme a ,
   .dark_theme .info_btn,
@@ -105,7 +105,7 @@
     border-radius: 50%;
   }
   input:checked + .slider {
-    background: var(--bs-dark);
+    background: var(--bs-shades-dark);
   }
   input:checked + .slider:before {
     transform: translateX(26px);
