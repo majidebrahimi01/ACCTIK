@@ -66,19 +66,34 @@
     width: 100vw;
     height: 100vh;
   }
-  .heading_style h3{
+  .heading_style h5{
     position: relative;
     padding-bottom: 5px;
-    display: grid;
-    grid-template-columns: 1fr auto 1fr;
-    grid-template-rows: 16px 0;
-    grid-gap: 15px;
   }
-  .heading_style h3::after,.heading_style h3::before {
-    content: " ";
+
+  .heading_style h5::before {
+    width: 28px;
+    height: 5px;
     display: block;
-    border-bottom: 2px solid var(--acc-green);
+    content: "";
+    position: absolute;
+    bottom: 3px;
+    left: 50%;
+    margin-left: -14px;
+    background: var(--acc-dark);
   }
+  .heading_style h5::after {
+    width: 200px;
+    height: 1px;
+    display: block;
+    content: "";
+    position: relative;
+    margin-top: 10px;
+    left: 50%;
+    margin-left: -100px;
+    background: var(--acc-dark);
+  }
+  
   
   .btn_hover:after{
     content: '';
@@ -174,16 +189,10 @@
   .dark_theme .hamburger_toggle .hamburger .bar{
     background: var(--acc-light);
   }
-  .dark_theme .navbar-brand .blue{
-    display: none;
-  }
-  .dark_theme .navbar-brand .green{
-    display: block;
-  }
-  .dark_theme .navbar-brand span{
-    color: var(--acc-green);
-  }
-
+.dark_theme .heading_style h5::before,
+.dark_theme .heading_style h5::after{
+  background: var(--acc-light);
+}
   /* toggle btn */
   .toggle {
     position: relative;
@@ -203,7 +212,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: var(--acc-blue);
+    background: var(--acc-dark);
     transition: .4s;
     border-radius: 34px;
     box-shadow: 0 3px 10px rgba(0, 0, 0,.5);
@@ -215,16 +224,15 @@
     width: 26px;
     left: 4px;
     bottom: 4px;
-    background: var(--acc-orange);
+    background: var(--acc-light);
     transition: .4s;
     border-radius: 50%;
   }
   input:checked + .slider {
-    background: var(--acc-shades-dark);
+    background: var(--acc-blue);
   }
   input:checked + .slider:before {
     transform: translateX(26px);
-    background: var(--acc-light);
   }
 
 /*=============================================================
@@ -242,14 +250,7 @@
     width: 50px;
     margin-left: 20px;
   }
-  .navbar-brand .green{
-    display: none;
-  }
-  .navbar-brand span{
-    font-family: 'BKoodak';
-    font-size: 28px;
-    color: var(--acc-blue);
-  }
+
   /* navbar register btn */
   .navbar .signin_btn{
     width: 197px;
@@ -598,3 +599,14 @@
   }
 }
 @media (max-width: 1440px) {}
+
+
+
+ /*********************************************************
+                        register.html
+**********************************************************/
+/* .form_panel{
+  width: 854px;
+  height:650px;
+  z-index: 1;
+} */
