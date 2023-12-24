@@ -16,7 +16,7 @@
     --acc-Purple: #8338EC;
     --acc-orange:#FB6107;
     --acc-pink:#F84AA7;
-    --acc-green:#2EBC84;
+    --acc-green:#2EBC84; 
     --acc-dark:#2D3142;
     --acc-blue:#239AD7;
     --acc-yellow:#F0C808;
@@ -186,6 +186,11 @@
   .dark_theme .heading_style h5::before,
   .dark_theme .heading_style h5::after{
     background: var(--acc-light);
+  }
+  .dark_theme .form_input input,
+  .dark_theme .submit_btn{
+    background: var(--acc-shades-dark);
+    color: var(--acc-light);
   }
 
   /* toggle btn */
@@ -456,10 +461,11 @@
   }
   .info_btns_group{
     direction: rtl;
+    width: 100vw;
   }
   .info_btn{
     height: 65px;
-    width: 180px;
+    width: 200px;
     position: relative;
     display: flex;
     align-items: center;
@@ -532,8 +538,8 @@
                       Footer Section
 ===========================================================  */
   .footer{
-    position: fixed;
-    bottom: 0;
+    /* position: fixed;
+    bottom: 0; */
     width: 100vw;
     height: 40px;
     display: flex;
@@ -570,11 +576,12 @@
   } */
 }
 
-@media screen and (max-width: 767px) {
+@media (max-width: 767px) {
   .navbar-brand{
     position: absolute;
     left: 0;
   }
+
   /* .info_inner{
     height: 25px;
   } */
@@ -601,20 +608,19 @@
  /*********************************************************
                         register.html
 **********************************************************/
-/* .form_section{
+.form_section{
   width: 100vw;
   height:100vh;
   z-index: 1;
 }
 .form-wrap {
   width: 854px;
-  height: 650px;
+  height: 550px;
   background: var(--acc-light);
-  margin: 3em auto;
+  margin: auto;
   direction: rtl;
   border-radius: 5px;
  }
-
 .tab-list {
   margin: 0;
   padding: 0;
@@ -622,49 +628,34 @@
   display: flex;
   position: relative;
 }
-
 .tab-list::before {
   content: '';
   display: block;
-  height: 2px;
+  height: 5px;
   width: 50%;
   position: absolute;
   bottom: 0;
-  background-color: #aaa;
+  background: var(--acc-green);
+  border-radius: 5px;
   transition: .3s;
 }
-
 .tab-item {
   height: 85px;
   flex: 1;
   text-align: center;
   transition: .3s;
-  opacity: 0.5;
   cursor: pointer;
 }
-
-.tab-toggle {
-  display: none;
-}
-
-.tab-content {
-  display: none;
-}
-
+.tab-toggle {display: none;}
+.tab-content {display: none; padding: 0 80px;}
 .tab-toggle:nth-child(1):checked ~ .tab-list .tab-item:nth-child(1),
-.tab-toggle:nth-child(2):checked ~ .tab-list .tab-item:nth-child(2) {
-  opacity: 1;
+.tab-toggle:nth-child(2):checked ~ .tab-list .tab-item:nth-child(2) { 
+  color: var(--acc-green);
+  font-weight: 600;
 }
-
-.tab-toggle:nth-child(2):checked ~ .tab-list::before {
-  transform: translateX(-100%);
-}
-
-
+.tab-toggle:nth-child(2):checked ~ .tab-list::before {transform: translateX(-100%);}
 .tab-toggle:nth-child(1):checked ~ .tab-container .tab-content:nth-child(1),
-.tab-toggle:nth-child(2):checked ~ .tab-container .tab-content:nth-child(2) {
-  display: block;
-}
+.tab-toggle:nth-child(2):checked ~ .tab-container .tab-content:nth-child(2) {display: block;}
 
 .tab-trigger {
   display: flex;
@@ -674,8 +665,72 @@
   cursor:  pointer;
   width: 100%;
   height: 100%;
+  font-size: 20px;
 }
-
-.tab-container {
-  padding: 15px 30px;
-} */
+.tab-container {padding: 15px 30px;}
+.form_input label { font-size: 18px;}
+.form_input input {
+  width: 100%;
+  border: none;
+  background: var(--acc-shades-light);
+  border-radius: 4px;
+  margin: 8px 0;
+  outline: none;
+  padding: 8px;
+  box-sizing: border-box;
+  transition: 0.3s;
+  padding-right: 45px;
+}
+.form_input {position: relative;}
+.form_input svg {
+  position: absolute;
+  right: 0;
+  padding: 15px 8px 0;
+  fill: var(--acc-dark);
+  transition: 0.3s;
+}
+.form_input input:focus + svg {
+  fill:var(--acc-green);
+}
+.remember_forget{
+  display: flex;
+  justify-content: space-between;
+}
+.field-icon {
+  float: left;
+  position: absolute;
+  left: 15px;
+  z-index: 2;
+  cursor: pointer;
+}
+.form_input i{
+  font-size: 30px;
+  /* color: var(--acc-dark); */
+}
+.login_form .remember_forget,
+.login_form a.green{
+  color: var(--acc-green) !important;
+}
+.send_code i{
+  color: var(--acc-green);
+  font-size: 25px;
+}
+.submit_btn{
+  width:100%;
+  height: 64px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  margin: 5px;
+  text-decoration: none;
+  font-size:18px;
+  letter-spacing: 0.5px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+  border: none;
+  border-radius: 5px;
+  background: var(--acc-shades-light);
+  color: var(--acc-dark);
+}
