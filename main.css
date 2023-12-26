@@ -247,6 +247,9 @@
     padding: 12px 0 8px !important;
   }
   /* navbaar brand */
+  .navbar .navbar-brand{
+    position: relative;
+  }
   .navbar .navbar-brand img{
     width: 50px;
     margin-left: 20px;
@@ -276,7 +279,7 @@
   .navbar .navbar-collapse {
     height: 100%;
     direction: rtl;
-    justify-content: flex-start !important;
+    /* justify-content: flex-start !important; */
     align-items: center;
   }
   .navbar-collapse .active {
@@ -440,6 +443,10 @@
     right: 5px;
     bottom: 5px;
   }
+.wallet{
+  width: 30px;
+  margin: 0 10px;
+}
 
 /*=============================================================
                       Main Section
@@ -581,6 +588,16 @@
     position: absolute;
     left: 0;
   }
+  .navbar-collapse{
+    display: flex;
+    flex-direction: column;
+  }
+  .navbar-collapse .right_side {
+    flex-direction: column !important;
+  }
+  .navbar-collapse .left_side{
+    display: flex;
+  }
 
   /* .info_inner{
     height: 25px;
@@ -614,8 +631,6 @@
   z-index: 1;
 }
 .form-wrap {
-  width: 854px;
-  height: 550px;
   background: var(--acc-light);
   margin: auto;
   direction: rtl;
@@ -647,7 +662,7 @@
   cursor: pointer;
 }
 .tab-toggle {display: none;}
-.tab-content {display: none; padding: 0 80px;}
+.tab-content {display: none; padding: 0 40px;}
 .tab-toggle:nth-child(1):checked ~ .tab-list .tab-item:nth-child(1),
 .tab-toggle:nth-child(2):checked ~ .tab-list .tab-item:nth-child(2) { 
   color: var(--acc-green);
@@ -668,69 +683,46 @@
   font-size: 20px;
 }
 .tab-container {padding: 15px 30px;}
-.form_input label { font-size: 18px;}
-.form_input input {
-  width: 100%;
-  border: none;
-  background: var(--acc-shades-light);
-  border-radius: 4px;
-  margin: 8px 0;
-  outline: none;
-  padding: 8px;
-  box-sizing: border-box;
-  transition: 0.3s;
-  padding-right: 45px;
+.input-group-text,
+.form-control{
+  border-radius: 0 !important;
+  background: var(--acc-shades-light) !important;
+  border: none !important;
 }
-.form_input {position: relative;}
-.form_input svg {
-  position: absolute;
-  right: 0;
-  padding: 15px 8px 0;
-  fill: var(--acc-dark);
-  transition: 0.3s;
+.form-control:focus{
+  box-shadow: none !important;
 }
-.form_input input:focus + svg {
-  fill:var(--acc-green);
+.lable{
+  font-size: 18px;
+  font-weight: bold;
 }
-.remember_forget{
-  display: flex;
-  justify-content: space-between;
+.forget_pass{
+  text-align: left;
 }
-.field-icon {
-  float: left;
-  position: absolute;
-  left: 15px;
-  z-index: 2;
-  cursor: pointer;
-}
-.form_input i{
-  font-size: 30px;
-  /* color: var(--acc-dark); */
-}
-.login_form .remember_forget,
-.login_form a.green{
+.forget_pass a,
+.send_code a,
+.send_code{
   color: var(--acc-green) !important;
 }
 .send_code i{
-  color: var(--acc-green);
-  font-size: 25px;
+  font-size: 30px;
 }
 .submit_btn{
-  width:100%;
-  height: 64px;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 10px;
-  margin: 5px;
-  text-decoration: none;
-  font-size:18px;
-  letter-spacing: 0.5px;
-  overflow: hidden;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
-  border: none;
-  border-radius: 5px;
-  background: var(--acc-shades-light);
-  color: var(--acc-dark);
+    width: 100%;
+    height: 50px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    margin: 5px;
+    text-decoration: none;
+    /* color: var(--acc-light); */
+    font-size:18px;
+    letter-spacing: 0.5px;
+    overflow: hidden;
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.5);
+    border: none;
+    border-radius: 5px;
+    background: var(--acc-shades-light) ;
 }

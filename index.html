@@ -16,11 +16,7 @@
 <section id="particles-js"></section>
   <!-- Top Menu -->
     <nav class="navbar navbar-expand-md shadow-lg">
-      <div class="container d-flex align-items-center h-100">
-        <label class="toggle">
-          <input type="checkbox" onclick="toggleTheme()">
-          <span class="slider"></span>
-        </label>
+      <div class="container d-flex align-items-center">
         <button class="navbar-toggler collapsed border-0 p-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggler" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
           <div class="hamburger_toggle position-relative d-inline-block">
               <div class="hamburger position-absolute start-50 top-50 w-50 h-50">
@@ -39,15 +35,22 @@
             <span></span><span></span><span></span><span></span>
             ورود / عضویت
           </a>
-        </div>
           <ul class="navbar-nav cz_effect">
             <li class="nav-item">
-              <a class="nav-link" href="#team"><span>درباره ما </span></a>
+              <a class="nav-link" href="UnderConstruction.html"><span>درباره ما </span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#contact"><span>تماس با ما </span></a>
+              <a class="nav-link" href="UnderConstruction.html"><span>تماس با ما </span></a>
             </li>
-          </ul>          
+          </ul>  
+          </div>
+          <div class="left_side d-flex flex-row align-items-center">
+            <a href="#"><img class="wallet" src="img/wallet_icon.svg" alt=""></a>      
+            <label class="toggle">
+              <input type="checkbox" onclick="toggleTheme()">
+              <span class="slider"></span>
+            </label>
+          </div>  
         </div>
       </div>
     </nav>
@@ -160,8 +163,7 @@
 
 
 // particle background
-    particlesJS("particles-js", {"particles":{"number":{"value":140,"density":{"enable":true,"value_area":1000}},"color":{"value":"#0d6efd"},"shape":{"type":"circle","stroke":{"width":0,"color":"#0d6efd"},"polygon":{"nb_sides":12},"image":{"src":"img/github.svg","width":100,"height":100}},"opacity":{"value":0.7,"random":false,"anim":{"enable":false,"speed":1,"opacity_min":0.1,"sync":false}},"size":{"value":3,"random":true,"anim":{"enable":false,"speed":40,"size_min":0.1,"sync":false}},"line_linked":{"enable":true,"distance":300,"color":"#0d6efd","opacity":0.3,"width":0.6999999999999998},"move":{"enable":true,"speed":6,"direction":"none","random":false,"straight":false,"out_mode":"out","bounce":false,"attract":{"enable":false,"rotateX":600,"rotateY":1200}}},"interactivity":{"detect_on":"canvas","events":{"onhover":{"enable":true,"mode":"grab"},"onclick":{"enable":false,"mode":"push"},"resize":true},"modes":{"grab":{"distance":413.23318505554363,"line_linked":{"opacity":1}},"bubble":{"distance":400,"size":40,"duration":2,"opacity":8,"speed":3},"repulse":{"distance":200,"duration":0.4},"push":{"particles_nb":4},"remove":{"particles_nb":2}}},"retina_detect":true});var count_particles, stats, update; stats = new Stats; stats.setMode(0); stats.domElement.style.position = 'absolute'; stats.domElement.style.left = '0px'; stats.domElement.style.top = '0px'; document.body.appendChild(stats.domElement); count_particles = document.querySelector('.js-count-particles'); update = function() { stats.begin(); stats.end(); if (window.pJSDom[0].pJS.particles && window.pJSDom[0].pJS.particles.array) { count_particles.innerText = window.pJSDom[0].pJS.particles.array.length; } requestAnimationFrame(update); }; requestAnimationFrame(update);;
-
+particlesJS("particles-js", {"particles":{"number":{"value":140,"density":{"enable":true,"value_area":1000}},"color":{"value":"#0d6efd"},"shape":{"type":"circle","stroke":{"width":0,"color":"#0d6efd"},"polygon":{"nb_sides":12},"image":{"src":"img/github.svg","width":100,"height":100}},"opacity":{"value":0.7,"random":false,"anim":{"enable":false,"speed":1,"opacity_min":0.1,"sync":false}},"size":{"value":3,"random":true,"anim":{"enable":false,"speed":40,"size_min":0.1,"sync":false}},"line_linked":{"enable":true,"distance":300,"color":"#0d6efd","opacity":0.3,"width":0.6999999999999998},"move":{"enable":true,"speed":6,"direction":"none","random":false,"straight":false,"out_mode":"out","bounce":false,"attract":{"enable":false,"rotateX":600,"rotateY":1200}}},"interactivity":{"detect_on":"canvas","events":{"onhover":{"enable":true,"mode":"grab"},"onclick":{"enable":false,"mode":"push"},"resize":true},"modes":{"grab":{"distance":413.23318505554363,"line_linked":{"opacity":1}},"bubble":{"distance":400,"size":40,"duration":2,"opacity":8,"speed":3},"repulse":{"distance":200,"duration":0.4},"push":{"particles_nb":4},"remove":{"particles_nb":2}}},"retina_detect":true});var count_particles, stats, update; stats = new Stats; stats.setMode(0); stats.domElement.style.position = 'absolute'; stats.domElement.style.left = '0px'; stats.domElement.style.top = '0px'; document.body.appendChild(stats.domElement); count_particles = document.querySelector('.js-count-particles'); update = function() { stats.begin(); stats.end(); if (window.pJSDom[0].pJS.particles && window.pJSDom[0].pJS.particles.array) { count_particles.innerText = window.pJSDom[0].pJS.particles.array.length; } requestAnimationFrame(update); }; requestAnimationFrame(update);;
 // toggle switch
       function toggleTheme() {
         const body = document.body;
