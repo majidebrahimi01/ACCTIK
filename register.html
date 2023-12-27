@@ -44,11 +44,11 @@
         </ul>  
         </div>
         <div class="left_side d-flex flex-row align-items-center">
-          <a href="#"><img class="wallet" src="img/wallet_icon.svg" alt=""></a>      
           <label class="toggle">
             <input type="checkbox" onclick="toggleTheme()">
             <span class="slider"></span>
           </label>
+          <a href="#"><img class="wallet" src="img/wallet_icon.svg" alt=""></a>      
         </div>  
       </div>
     </div>
@@ -205,6 +205,26 @@
     const body = document.body;
     body.classList.toggle('dark_theme');
   }
+
+// Store the current theme state in localStorage
+function toggleTheme() {
+  const body = document.body;
+  const currentTheme = body.classList.contains('dark_theme') ? 'dark' : 'light';
+  localStorage.setItem('theme', currentTheme);
+  body.classList.toggle('dark_theme');
+}
+
+// Apply the stored theme state when the page loads
+document.addEventListener('DOMContentLoaded', () => {
+  const savedTheme = localStorage.getItem('theme');
+  if (savedTheme === 'dark') {
+    document.body.classList.add('dark_theme');
+  }
+});
+
+
+
+
   // end toggle switch
 
   // show/hide password
