@@ -206,21 +206,6 @@
     body.classList.toggle('dark_theme');
   }
 
-// Store the current theme state in localStorage
-function toggleTheme() {
-  const body = document.body;
-  const currentTheme = body.classList.contains('dark_theme') ? 'dark' : 'light';
-  localStorage.setItem('theme', currentTheme);
-  body.classList.toggle('dark_theme');
-}
-
-// Apply the stored theme state when the page loads
-document.addEventListener('DOMContentLoaded', () => {
-  const savedTheme = localStorage.getItem('theme');
-  if (savedTheme === 'dark') {
-    document.body.classList.add('dark_theme');
-  }
-});
 
 
 
