@@ -1,0 +1,161 @@
+/******* start navbar toggler animation *******/
+document.addEventListener('click', function(e) {
+if (e.target.classList.contains('hamburger_toggle')) {
+	e.target.children[0].classList.toggle('active');
+}
+})    
+
+/******* start toggle switch ********/
+// Function saveThemeState to save the state of the theme
+function saveThemeState(theme) {
+    localStorage.setItem('theme', theme);
+}
+// Function applyTheme to set the theme according to the saved state
+function applyTheme() {
+const savedTheme = localStorage.getItem('theme');
+const body = document.body;
+	if (savedTheme === 'dark') {
+		body.classList.add('dark_theme');
+	} else {
+		body.classList.remove('dark_theme');
+	}
+}
+  // Call the applyTheme function when the page loads
+  document.addEventListener('DOMContentLoaded', applyTheme);
+  // toggleTheme function to change the theme and save its state
+  function toggleTheme() {
+    const body = document.body;
+    body.classList.toggle('dark_theme');
+    const currentTheme = body.classList.contains('dark_theme') ? 'dark' : 'light';
+    saveThemeState(currentTheme);
+  }
+
+/******* particle background ********/
+particlesJS("particles-js", {
+    "particles": {
+		"number": {
+			"value": 140,
+			"density": {
+				"enable": true,
+				"value_area": 1000
+			}
+		},
+		"color": {
+			"value": "#0d6efd"
+		},
+		"shape": {
+			"type": "circle",
+			"stroke": {
+				"width": 0,
+				"color": "#0d6efd"
+			},
+			"polygon": {
+				"nb_sides": 12
+			},
+			"image": {
+				"src": "img/github.svg",
+				"width": 100,
+				"height": 100
+			}
+		},
+		"opacity": {
+			"value": 0.7,
+			"random": false,
+			"anim": {
+				"enable": false,
+				"speed": 1,
+				"opacity_min": 0.1,
+				"sync": false
+			}
+		},
+		"size": {
+			"value": 3,
+			"random": true,
+			"anim": {
+        "enable": false,
+				"speed": 40,
+				"size_min": 0.1,
+				"sync": false
+			}
+		},
+		"line_linked": {
+      "enable": true,
+			"distance": 300,
+			"color": "#0d6efd",
+			"opacity": 0.3,
+			"width": 1
+		},
+		"move": {
+      "enable": true,
+			"speed": 6,
+			"direction": "none",
+			"random": false,
+			"straight": false,
+			"out_mode": "out",
+			"bounce": false,
+			"attract": {
+				"enable": false,
+				"rotateX": 600,
+				"rotateY": 1200
+			}
+		}
+	},
+	"interactivity": {
+    "detect_on": "canvas",
+		"events": {
+      "onhover": {
+				"enable": true,
+				"mode": "grab"
+			},
+			"onclick": {
+				"enable": true, //fals
+				"mode": "push"
+			},
+			"resize": true
+		},
+		"modes": {
+      "grab": {
+        "distance": 413,
+				"line_linked": {
+          "opacity": 1
+				}
+			},
+			"bubble": {
+				"distance": 400,
+				"size": 40,
+				"duration": 2,
+				"opacity": 8,
+				"speed": 3
+			},
+
+			"repulse": {
+				"distance": 200,
+				"duration": 0.4
+			},
+			"push": {
+				"particles_nb": 4
+			},
+			"remove": {
+				"particles_nb": 2
+			}
+		}
+	},
+	"retina_detect": true
+}); 
+
+/******* show/hide password ********/
+ function password_show_hide() {
+	var x = document.getElementById("password");
+	var show_eye = document.getElementById("show_eye");
+	var hide_eye = document.getElementById("hide_eye");
+	hide_eye.classList.remove("d-none");
+	if (x.type === "password") {
+	  x.type = "text";
+	  show_eye.style.display = "none";
+	  hide_eye.style.display = "block";
+	} else {
+	  x.type = "password";
+	  show_eye.style.display = "block";
+	  hide_eye.style.display = "none";
+	}
+  }
