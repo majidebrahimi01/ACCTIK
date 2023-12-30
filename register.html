@@ -45,10 +45,10 @@
         </div>
         <div class="left_side d-flex flex-row align-items-center">
           <label class="toggle">
-            <input type="checkbox" onclick="toggleTheme()">
+            <input id="toggle_theme" type="checkbox" onclick="toggleTheme()">
             <span class="slider"></span>
           </label>
-          <a href="#"><img class="wallet" src="img/wallet_icon.svg" alt=""></a>      
+          <a href="#"><img class="wallet" src="img/coin-wallet.png" alt=""></a>      
         </div>  
       </div>
     </div>
@@ -56,8 +56,7 @@
     <!-- End Top Menu -->
 
     <!-- Main -->
-    <section class="form_section d-flex align-items-center justify-content-center">
-      <div class="form-wrap col-lg-5 shadow-lg">
+      <section class="form-wrap col-lg-5 shadow-lg">
           <input type="radio" class="tab-toggle" name="tab-toggle" id="tab1" checked>
           <input type="radio" class="tab-toggle" name="tab-toggle" id="tab2">      
           <ul class="tab-list shadow-lg">
@@ -73,34 +72,27 @@
 
             </div>
             <div class="tab-content">
-
-              <form action="" method="post" id="login" autocomplete="off" class="p-3">
+              <form action="" method="post" id="login" autocomplete="off" class="login p-3">
                 <div class="form-row">
                   <h4 class="title my-2 text-center">سلام, من اَک تیک هستم!</h4>
-                  <div class="col-12">
-                    <span class="lable">نام کاربری</span>
-                    <div class="input-group mb-3 mt-1">
-                      <div class="input-group-prepend">
-                        <span class="input-group-text" id="basic-addon1"><i class="bi bi-person-fill"></i></span>
-                      </div>
-                      <input name="username" type="text" value="" class="input form-control" id="username" placeholder="شماره موبایل وارد شده در مرحله ثبت نام" aria-label="Username" aria-describedby="basic-addon1" />
-                    </div>
+                  
+                  <div class="form-control position-relative">
+                    <label for="validationUsername" class="form-label">نام کاربری</label>
+                    <input name="username" type="text" value="" class="input" id="validationUsername" placeholder="شماره موبایل" aria-label="Username" aria-describedby="" />
+                    <i class="bi bi-person-fill form_icon" aria-hidden="true"></i>
+                    <small class="username_message">Error Message</small>
                   </div>
-                  <div class="col-12">
-                    <span class="lable">رمز عبور</span>
-                    <div class="input-group mb-3 mt-1">
-                      <div class="input-group-prepend">
-                        <span class="input-group-text" id="basic-addon1"><i class="bi bi-lock-fill"></i></span>
-                      </div>
-                      <input name="password" type="password" value="" class="input form-control" id="password" placeholder="رمز عبور" required="true" aria-label="password" aria-describedby="basic-addon1" />
-                      <div class="input-group-append">
-                        <span class="input-group-text" onclick="password_show_hide();">
-                          <i class="bi bi-eye-fill" id="show_eye"></i>
-                          <i class="bi bi-eye-slash-fill d-none" id="hide_eye"></i>
-                        </span>
-                      </div>
-                    </div>
+                  <div class="form-control position-relative">
+                    <label for="validationPassword" class="form-label">رمز عبور</label>
+                    <input name="username" type="password" value="" class="input" id="validationPassword" placeholder="رمز عبور" aria-label="password" aria-describedby="" />
+                    <i class="bi bi-lock-fill form_icon" aria-hidden="true"></i>
+                    <span class="input-group-text" onclick="password_show_hide();">
+                      <i class="bi bi-eye-fill" id="show_eye"></i>
+                      <i class="bi bi-eye-slash-fill d-none" id="hide_eye"></i>
+                    </span>
+                    <small class="password_message">Error Message</small>
                   </div>
+                  
                   <div class="row forget">
                       <div class="forget_pass">
                         <a href="#">رمز عبور را فراموش کردم</a>
@@ -117,15 +109,13 @@
                     </button>
                   </div>
                   <div class="col-sm-12 text-center">
-                    <p>حساب کاربری ندارید؟ <a href="#">ثبت نام کنید!</a></p>
+                    <p>حساب کاربری ندارید؟ <a class="get_register" href="#">ثبت نام کنید!</a></p>
                   </div>
                 </div>
               </form>           
             </div>
           </div>
-      </div>
-
-    </section>
+      </section>
     <!-- End Main -->
 
     <!-- Footer-->
@@ -140,6 +130,5 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script src="js/script.js"></script>
-
 </body>
 </html>

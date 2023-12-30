@@ -1,5 +1,8 @@
+
+let $ = document;
+
 /******* start navbar toggler animation *******/
-document.addEventListener('click', function(e) {
+$.addEventListener('click', function(e) {
 if (e.target.classList.contains('hamburger_toggle')) {
 	e.target.children[0].classList.toggle('active');
 }
@@ -13,7 +16,7 @@ function saveThemeState(theme) {
 // Function applyTheme to set the theme according to the saved state
 function applyTheme() {
 const savedTheme = localStorage.getItem('theme');
-const body = document.body;
+const body = $.body;
 	if (savedTheme === 'dark') {
 		body.classList.add('dark_theme');
 	} else {
@@ -21,10 +24,10 @@ const body = document.body;
 	}
 }
   // Call the applyTheme function when the page loads
-  document.addEventListener('DOMContentLoaded', applyTheme);
+  $.addEventListener('DOMContentLoaded', applyTheme);
   // toggleTheme function to change the theme and save its state
   function toggleTheme() {
-    const body = document.body;
+    const body = $.body;
     body.classList.toggle('dark_theme');
     const currentTheme = body.classList.contains('dark_theme') ? 'dark' : 'light';
     saveThemeState(currentTheme);
@@ -145,9 +148,9 @@ particlesJS("particles-js", {
 
 /******* show/hide password ********/
  function password_show_hide() {
-	var x = document.getElementById("password");
-	var show_eye = document.getElementById("show_eye");
-	var hide_eye = document.getElementById("hide_eye");
+	var x = $.getElementById("validationPassword");
+	var show_eye = $.getElementById("show_eye");
+	var hide_eye = $.getElementById("hide_eye");
 	hide_eye.classList.remove("d-none");
 	if (x.type === "password") {
 	  x.type = "text";
@@ -159,3 +162,51 @@ particlesJS("particles-js", {
 	  hide_eye.style.display = "none";
 	}
   }
+
+
+/****************************/
+// این تابع زمانی که فرم ارسال می‌شود اجرا می‌شود
+$.getElementById('login').onsubmit = function(e) {
+  // جلوگیری از ارسال فرم
+  e.preventDefault();
+
+  // پیدا کردن المان‌ها
+  var usernameInput = $.getElementById('validationUsername');
+  var passwordInput = $.getElementById('validationPassword');
+  var userNameNote = $.querySelector('.username_message');
+  var passwordNote = $.querySelector('.password_message');
+  
+  // بررسی اندازه و محتوی نام کاربری
+  if (usernameInput.value.length < 11 || isNaN(usernameInput.value)) {
+	usernameInput.style.borderColor = '#dc3545';
+	userNameNote.innerHTML = 'نام کاربری وارد شده معتبر نمی‌باشد';
+	userNameNote.style.display = 'block';
+	userNameNote.style.color = '#dc3545';
+  } else {
+	usernameInput.style.borderColor = '#2EBC84';
+  }
+
+  // بررسی رمز عبور
+  if (passwordInput.value === '') {
+	passwordInput.style.borderColor = '#dc3545';
+	passwordNote.innerHTML = 'لطفاً رمز عبور را وارد کنید';
+	passwordNote.style.display = 'block';
+	passwordNote.style.color = '#dc3545';
+  }else if(passwordInput.value.length < 8){
+	passwordInput.style.borderColor = '#dc3545';
+	passwordNote.innerHTML = 'رمز عبور وارد شده صحیح نیست';
+	passwordNote.style.display = 'block';
+	passwordNote.style.color = '#dc3545';
+  }else {
+	passwordInput.style.borderColor = '#2EBC84';
+  }
+
+  // اگر هیچ خطایی وجود نداشت، فرم ارسال می‌شود
+  if (passwordInput.style.borderColor === '#2EBC84' && usernameInput.style.borderColor === 'green') {
+	this.submit();
+  }
+};
+
+
+
+
