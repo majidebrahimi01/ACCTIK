@@ -130,5 +130,52 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script src="js/script.js"></script>
+
+<script>
+  
+// این تابع زمانی که فرم ارسال می‌شود اجرا می‌شود
+$.getElementById('login').onsubmit = function(e) {
+  // جلوگیری از ارسال فرم
+  e.preventDefault();
+
+  // پیدا کردن المان‌ها
+  var usernameInput = $.getElementById('validationUsername');
+  var passwordInput = $.getElementById('validationPassword');
+  var userNameNote = $.querySelector('.username_message');
+  var passwordNote = $.querySelector('.password_message');
+  
+  // بررسی اندازه و محتوی نام کاربری
+  if (usernameInput.value.length < 11 || isNaN(usernameInput.value)) {
+	usernameInput.style.borderColor = '#dc3545';
+	userNameNote.innerHTML = 'نام کاربری وارد شده معتبر نمی‌باشد';
+	userNameNote.style.display = 'block';
+	userNameNote.style.color = '#dc3545';
+  } else {
+	usernameInput.style.borderColor = '#2EBC84';
+  }
+
+  // بررسی رمز عبور
+  if (passwordInput.value === '') {
+	passwordInput.style.borderColor = '#dc3545';
+	passwordNote.innerHTML = 'لطفاً رمز عبور را وارد کنید';
+	passwordNote.style.display = 'block';
+	passwordNote.style.color = '#dc3545';
+  }else if(passwordInput.value.length < 8){
+	passwordInput.style.borderColor = '#dc3545';
+	passwordNote.innerHTML = 'رمز عبور وارد شده صحیح نیست';
+	passwordNote.style.display = 'block';
+	passwordNote.style.color = '#dc3545';
+  }else {
+	passwordInput.style.borderColor = '#2EBC84';
+  }
+
+  // اگر هیچ خطایی وجود نداشت، فرم ارسال می‌شود
+  if (passwordInput.style.borderColor === '#2EBC84' && usernameInput.style.borderColor === 'green') {
+	this.submit();
+  }
+};
+</script>
+
+
 </body>
 </html>

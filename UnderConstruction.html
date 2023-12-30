@@ -35,24 +35,50 @@
             width: 100vw;
             height: 100vh;
         }
+        .wrapper {
+            /* height: 100vh; */
+            display: grid;
+            place-items: center;
+            font-size: 15px;
+            margin-bottom: 40px;
+            background: #f8f9fa;
+            padding: 0 10px;
+            border-radius: 5px;
+        }
+        .typing_demo {
+            white-space: nowrap;
+            font-size: 2em;
+            direction:rtl;
+            font-family: 'IRSans_B' !important;
+        }
+        .card{
+            /* width: 80vw;
+            height: 80vh; */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-evenly;
+            z-index: 1;
+        }
         .svgrelative {
 	        position: relative;
         }
         .back_to_home{
             text-decoration: none;
-            color: #f8f9fa;
+            background: #f8f9fa ;
+            color: #2D3142;
             font-size: 14px;
             font-family: 'IRSans_B' !important;
             margin-top: 15px;
             border: 1px solid #f8f9fa;
-            border-radius: 10px 25px 0;
+            border-radius: 5px;
             padding: 10px;
         }
         .back_to_home:hover{
             color: #2D3142;
-            border: 1px solid #2D3142;
-            background: #f8f9fa;
-            color: #1B1D28 ;
+            border: 1px solid #f8f9fa;
+            background: transparent;
+            color: #f8f9fa ;
         }
         .mainimagewrapper {
         display: flex;
@@ -292,154 +318,10 @@
             transform: translateY(1px) translateX(-1px) rotateZ(10deg);
             }
         }
-
-        .mtssectionproblems {
-            height: 100vh;
-            display: flex;
-        }
-        .mtssectionproblems .container {
-            justify-content: center;
-            align-items: center;
-            display: flex;
-        }
-        .mtssectionproblems .mtslogowrapper {
-            width: 100%;
-            text-align: center;
-            display: block;
-            margin-bottom: 9%;
-        }
-        .mtssectionproblems .problemheading {
-            font-family: 'Futura New';
-            font-size: 44px;
-            font-weight: bold;
-            line-height: 48px;
-            letter-spacing: 0px;
-            text-align: left;
-            color: #000;
-            margin-top: 2%;
-            margin-bottom: 25px;
-        }
-        .problemphone {
-            margin-bottom: 15%;
-        }
-        .probwrapper {
-            width: 100%;
-        }
         .mainimagewrapper svg {
             max-width: 490px;
             width: 100%;
         }
-        .mtssectionproblems .problemphone a {
-            font-family: 'Futura New';
-            font-size: 30px;
-            letter-spacing: -1px;
-            text-align: left;
-            color: #000;
-            text-decoration: none;
-        }
-        .mtssectionproblems .problemphone p {
-            font-size: 16px;
-            color: #aaa;
-        }
-        .mtssectionproblems .mts2-footer__soc-icons {
-            margin-right: 30px;
-        }
-        .mtssectionproblems .vk,
-        .mtssectionproblems .tw,
-        .mtssectionproblems .fb,
-        .mtssectionproblems .insta,
-        .mtssectionproblems .ok {
-            fill: #005dab;
-            transition: 300ms all ease;
-        }
-        .mtssectionproblems .vk:hover,
-        .mtssectionproblems .tw:hover,
-        .mtssectionproblems .fb:hover,
-        .mtssectionproblems .insta:hover,
-        .mtssectionproblems .ok:hover {
-            fill: #c30d14;
-        }
-        @media (min-width: 1200px) {
-            .mtssectionproblems .container {
-            max-width: 1290px;
-            }
-        }
-        @media (max-width: 1200px) {
-        .problemphone {
-        margin-bottom: 4%;
-        }
-        }
-        @media (max-width: 900px) {
-            .probwrapper {
-            padding: 0 6px;
-            text-align: center;
-            }
-            .mtssectionproblems .problemphone a {
-        font-size: 28px;
-        }
-        .mts2-footer__soc-block.d-flex.align-items-center {
-        justify-content: center;
-        }
-        .mtssectionproblems .mtslogowrapper {
-        width: 100%;
-        text-align: center;
-        display: block;
-        margin-bottom: 0%;
-        }
-        .problemphone {
-        margin-bottom: 3%;
-        }
-        .mtssectionproblems .mtslogowrapper svg {
-        width: 70%;
-        }
-        .mainimagewrapper svg {
-        max-width: 490px;
-        width: 86%;
-        margin: auto;
-        display: block;
-        max-height: 260px;
-        }
-        .mtssectionproblems .mts2-footer__soc-icons {
-        margin-right: 10px;
-        }
-        .mtssectionproblems .problemheading {
-        font-family: 'Futura New';
-        font-size: 23px;
-        font-weight: bold;
-        line-height: 27px;
-        letter-spacing: 0px;
-        text-align: center;
-        color: #000;
-        margin-top: 2%;
-        margin-bottom: 25px;
-        }
-    }
-    .wrapper {
-        /* height: 100vh; */
-        /*This part is important for centering*/
-        display: grid;
-        place-items: center;
-    }
-
-    .typing_demo {
-        white-space: nowrap;
-        font-size: 2em;
-        direction:rtl;
-        font-family: 'IRSans_B' !important;
-        background: linear-gradient(to right, #1B1D28 ,#cfcfcf);;
-        background-clip: text;
-        -webkit-text-fill-color: transparent;
-    }
-    .card{
-        /* width: 80vw;
-        height: 80vh; */
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-evenly;
-        z-index: 1;
-    }
-
     </style>
 </head>
 <body>
@@ -447,7 +329,7 @@
     <section class="card">
         <div class="wrapper">
             <div class="typing_demo">
-                به زودی همراه شما خواهیم بود.
+                به زودی همراه شما خواهیم بود....
             </div>
         </div>
         <div class="mainimagewrapper">
