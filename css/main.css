@@ -754,7 +754,7 @@ a.get_register{
     appearance: none;
     vertical-align: middle;
     background: transparent;
-    border-radius: 0.125em;
+    border-radius: 4px;
     display: inline-block;
     border: 1px solid var(--acc-gray2);
     position: relative;
